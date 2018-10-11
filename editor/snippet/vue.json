@@ -1,0 +1,27 @@
+{
+	"Vue template": {
+		"prefix": "*vue",
+		"body": [
+			"<template>",
+			"  <${1:div} class=\"$2\"$3>",
+			"    $4",
+			"  </$1>",
+			"</template>",
+			"<script>",
+			"${5:import ${6:vue} from '${7:vue}'}",
+			"$8",
+			"export default {",
+			"  data() {",
+			"    return {",
+			"      $10",
+			"    }",
+			"  },",
+			"  ${11:methods: {\n    $12\n  \\},$13}",
+      "  ${15:created(){\n    $16\n  \\}}",
+      "  }",
+			"</script>",
+			"${17:<style>\n  $18\n</style>}",
+		],
+		"description": "vue 模板"
+	}
+}
