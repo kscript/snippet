@@ -1,42 +1,20 @@
+/**
+ * 查看自定义的全局变量
+ * @name (testGlobal)
+ * @func
+ * @copyright [查看来源]{@link https://davidwalsh.name/global-variables-javascript}
+ */
 (function() {
-	createIframe(document, '', function(iframe){
-		var parent = getKeys(window);
-		var self = getKeys(iframe);
-		var result = test(parent, self);
-		console.log(result);
-	});
-	function test(source, target){
-    var res = {};
-    each(source, function(item, key){
-      if(target[key] === undefined){
-        res[key] = source[key];
-      }
-    });
-		return res;
-	}
-	function getKeys(obj){
-    var res = {};
-    each(obj, function(item, key){
-      res[key] = obj[key];
-    });
-		return res;
-	}
-  function each(obj, func){
-    for(var key in obj){
-      if(obj.hasOwnProperty(key)){
-        func(obj[key], key, obj);
-      }
-    }
-  }
-	function createIframe(parent, src, cb){
-		parent = parent || document;
-		var iframe = parent.createElement('iframe');
+		var iframe = document.createElement('iframe');
     iframe.onload = function() {
-      cb(iframe.contentWindow);
-			iframe.remove();
+      var result = {};
+      Object.keys(window).forEach(function(key) {
+        iframe.contentWindow[key] === undefined && (result[key] = window[key]);
+      });
+      console.log(result);
+      iframe.remove();
     };
-    iframe.src = src || 'about:blank';
-		iframe.style.cssText = 'display: none;';
-    parent.body.appendChild(iframe);
-  }
+    iframe.src = 'about:blank';
+    iframe.style.cssText = "display: none";
+    document.body.appendChild(iframe);
 })();
