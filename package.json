@@ -1,0 +1,24 @@
+{
+  "name": "snippet",
+  "version": "0.0.1",
+  "description": "收集各种代码片段",
+  "main": "index.js",
+  "scripts": {
+    "jsdoc": "jsdoc -R README.md -r -c jsdoc.json ./",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kscript/snippet.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kscript/snippet/issues"
+  },
+  "homepage": "https://github.com/kscript/snippet#readme",
+  "devDependencies": {
+    "jsdoc": "^3.5.5",
+    "minami": "^1.2.3"
+  }
+}

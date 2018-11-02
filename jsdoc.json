@@ -1,0 +1,25 @@
+{
+  "tags": {
+      "allowUnknownTags": true,
+      "dictionaries": ["jsdoc","closure"]
+  },
+  "source": {
+      "include": [],
+      "exclude": [".temp", "dist", "node_modules","out"],
+      "includePattern": ".+\\.js(doc)?$",
+      "excludePattern": "(^|\\/|\\\\)_"
+  },
+  "opts": {
+    "template": "./node_modules/minami",
+    "encoding": "utf8",
+    "destination": "./doc/",
+    "recurse": true,
+    "_template": "templates/default",
+    "_tutorials": "path/to/tutorials"
+  },
+  "plugins": ["plugins/markdown"],
+  "templates": {
+      "cleverLinks": false,
+      "monospaceLinks": false
+  }
+}
